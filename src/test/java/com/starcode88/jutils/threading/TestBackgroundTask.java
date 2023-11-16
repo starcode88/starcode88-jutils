@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class TestBackgroundTask implements BackgroundTaskListener {
+public class TestBackgroundTask implements BackgroundTaskListener<Integer> {
 
     private static final Logger logger = LogManager.getLogger(TestBackgroundTask.class);
     
@@ -54,13 +54,13 @@ public class TestBackgroundTask implements BackgroundTaskListener {
     }
 
 	@Override
-	public void beforeExecution(BackgroundTask task) {
+	public void beforeExecution(BackgroundTask<Integer> task) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public Object afterExecution(BackgroundTask task, Object result) {
+	public Integer afterExecution(BackgroundTask<Integer> task, Integer result) {
 		// TODO Auto-generated method stub
 		return null;
 	}
